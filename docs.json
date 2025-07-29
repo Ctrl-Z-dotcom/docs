@@ -1,37 +1,18 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "EM Tuition Tutor Onboarding",
+  "name": "EM Tuition Onboarding",
+  "colors": {
+    "primary": "#16A34A"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Tutor Onboarding",
-        "groups": [
-          {
-            "group": "Welcome & Introduction",
-            "pages": ["welcome", "meet-the-team"]
-          },
-          {
-            "group": "Tools & Delivery",
-            "pages": ["tools-overview", "lesson-delivery", "id-badges"]
-          },
-          {
-            "group": "Tutoring Practice",
-            "pages": ["sessions-and-resources", "reports-and-pay", "session-cancellation"]
-          },
-          {
-            "group": "Safeguarding & Conduct",
-            "pages": ["safeguarding", "confidentiality", "alternative-provision"]
-          },
-          {
-            "group": "Support & Contacts",
-            "pages": ["contract-managers", "staff-contacts", "faq"]
-          },
-          {
-            "group": "Appendices",
-            "pages": ["key-links"]
-          }
-        ]
+        "tab": "Onboarding",
+        "groups": [{
+          "group": "Getting Started",
+          "pages": ["index"]
+        }]
       }
     ]
   }
