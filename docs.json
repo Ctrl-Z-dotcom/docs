@@ -11,7 +11,7 @@
         "tab": "Onboarding",
         "groups": [{
           "group": "Getting Started",
-          "pages": ["index"]
+          "pages": ["index", "meet-the-team"]
         }]
       }
     ]
