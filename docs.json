@@ -11,8 +11,12 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Viktor's test",
         "groups": [
+          {
+            "group": "Chapter 1: Essential Tools",
+            "pages": ["essential-online-tools"]
+          },
           {
             "group": "Getting started",
             "pages": [
@@ -20,6 +24,10 @@
               "quickstart",
               "development"
             ]
+          },
+          {
+            "group": "Chapter 1: Essential Tools",
+            "pages": ["essential-online-tools"]
           },
           {
             "group": "Customization",
