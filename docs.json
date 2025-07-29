@@ -22,13 +22,11 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "development",
+              "essential-online-tools"
             ]
           },
-          {
-            "group": "Chapter 1: Essential Tools",
-            "pages": ["essential-online-tools"]
-          },
+          
           {
             "group": "Customization",
             "pages": [
