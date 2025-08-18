@@ -13,6 +13,11 @@
           "group": "Getting Started",
           "pages": ["index", "meet-the-team", "staff-contacts"]
         }]
+        "tab": "Your first role",
+        "groups": [{
+          "group": "Essential tools",
+          "pages": ["essentialonlinetools", "sessions-and-resources", "reports-and-pay"]
+        }]
       }
     ]
   }
