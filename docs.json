@@ -14,7 +14,7 @@
           },
           {
             "group": "Your first role",
-            "pages": ["essentialonlinetools", "location-f2f-online", "sessions-and-resources", "reports-and-pay"]
+            "pages": ["essentialonlinetools", "location-f2f-online", "pay", "sessions-and-resources", "reports-and-pay"]
           }
         ]
       }
