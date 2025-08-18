@@ -2,9 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "EM Tutor Guide",
-  "colors": {
-    "primary": "#16A34A"
-  },
+  "colors": { "primary": "#0A84FF" },
   "navigation": {
     "tabs": [
       {
@@ -13,14 +11,9 @@
           {
             "group": "Getting Started",
             "pages": ["index", "meet-the-team", "staff-contacts"]
-          }
-        ]
-      },
-      {
-        "tab": "Your first role",
-        "groups": [
+          },
           {
-            "group": "Essential tools",
+            "group": "Your first role",
             "pages": ["essentialonlinetools", "sessions-and-resources", "reports-and-pay"]
           }
         ]
