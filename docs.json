@@ -15,6 +15,10 @@
           {
             "group": "Your first role",
             "pages": ["essentialonlinetools", "location-f2f-online", "AP-working-with-the-learner", "RA-first-session", "pay", "sessions-and-resources", "reports-and-pay"]
+          },
+          {
+            "group": "Teachers' Standards",
+            "pages": ["DfE Standards"]
           }
         ]
       }
