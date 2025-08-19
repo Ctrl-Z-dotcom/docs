@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keeping Children Safe in Education 2025</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f8fafc;
+            --tertiary-bg: #f1f5f9;
+            --border-color: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--primary-bg);
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--secondary-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-header {
+            padding: 0 24px 24px 24px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .nav-section {
+            margin-bottom: 32px;
+        }
+
+        .nav-section-title {
+            padding: 0 24px 12px 24px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .nav-item {
+            display: block;
+            padding: 8px 24px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            color: var(--accent-blue);
+            border-left-color: var(--accent-blue);
+        }
+
+        .nav-item.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            border-left-color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        .nav-sub-item {
+            padding-left: 40px;
+            font-size: 13px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            background: var(--primary-bg);
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 32px;
+        }
+
+        /* Header */
+        .doc-header {
+            margin-bottom: 48px;
+        }
+
+        .doc-title {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .doc-subtitle {
+            font-size: 24px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .doc-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .meta-badge {
+            padding: 8px 16px;
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .status-badge {
+            background: linear-gradient(135deg, var(--accent-orange), #f97316);
+            color: white;
+            border: none;
+        }
+
+        /* Alert Box */
+        .alert {
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--accent-orange), #f97316);
+        }
+
+        .alert-title {
+            font-weight: 600;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 48px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: 24px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        li::marker {
+            color: var(--accent-blue);
+        }
+
+        /* Numbered Paragraphs */
+        .numbered-para {
+            display: flex;
+            margin-bottom: 24px;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .para-number {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .para-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+
+        /* Cards */
+        .info-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-card-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .definition-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .warning-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(220, 38, 38, 0.05));
+            border: 1px solid rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(5, 150, 105, 0.05));
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--accent-green);
+        }
+
+        /* Flowchart */
+        .flowchart {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .flowchart-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .flowchart-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            background: var(--primary-bg);
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        /* Footer Navigation */
+        .doc-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 64px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            padding: 12px 20px;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .footer-link:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .content-wrapper {
+                padding: 24px 16px;
+            }
+
+            .doc-title {
+                font-size: 32px;
+            }
+
+            .doc-meta {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus states */
+        .nav-item:focus,
+        .footer-link:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">KCSIE 2025</div>
+                <div class="sidebar-subtitle">Statutory Guidance</div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">Overview</div>
+                <a href="#summary" class="nav-item active">Summary</a>
+                <a href="#about" class="nav-item">About this guidance</a>
+                <a href="#status" class="nav-item">Status</a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Part One</div>
+                <a href="#part-one" class="nav-item">Safeguarding Information</a>
+                <a href="#what-staff-know" class="nav-item nav-sub-item">What Staff Should Know</a>
+                <a href="#what-staff-do" class="nav-item nav-sub-item">What Staff Should Do</a>
+                <a href="#early-help" class="nav-item nav-sub-item">Early Help</a>
+                <a href="#indicators" class="nav-item nav-sub-item">Indicators of Abuse</a>
+                <a href="#concerns" class="nav-item nav-sub-item">Having Concerns</a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Safeguarding Issues</div>
+                <a href="#child-on-child" class="nav-item">Child-on-child Abuse</a>
+                <a href="#exploitation" class="nav-item">Child Exploitation</a>
+                <a href="#domestic-abuse" class="nav-item">Domestic Abuse</a>
+                <a href="#fgm" class="nav-item">Female Genital Mutilation</a>
+                <a href="#mental-health" class="nav-item">Mental Health</a>
+                <a href="#serious-violence" class="nav-item">Serious Violence</a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Procedures</div>
+                <a href="#referrals" class="nav-item">Making Referrals</a>
+                <a href="#record-keeping" class="nav-item">Record Keeping</a>
+                <a href="#flowchart" class="nav-item">Process Flowchart</a>
+                <a href="#whistleblowing" class="nav-item">Whistleblowing</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Header -->
+                <header class="doc-header">
+                    <h1 class="doc-title">Keeping children safe in education</h1>
+                    <p class="doc-subtitle">2025</p>
+                    <p class="doc-subtitle">Statutory guidance for schools and colleges</p>
+                    
+                    <div class="doc-meta">
+                        <span class="meta-badge status-badge">July 2025 Information Version</span>
+                        <span class="meta-badge">Effective September 2025</span>
+                        <span class="meta-badge">Department for Education</span>
+                    </div>
+
+                    <div class="alert">
+                        <div class="alert-title">📋 Important Notice</div>
+                        <p>This is the July 2025 information version, pending publication of the final version which comes into force in September 2025.</p>
+                    </div>
+                </header>
+
+                <!-- Summary Section -->
+                <section id="summary" class="section">
+                    <h1>Summary</h1>
+                    
+                    <div id="status" class="info-card definition-card">
+                        <h3 class="info-card-title">The status of this guidance</h3>
+                        <p>This is statutory guidance from the Department for Education ('the Department') issued under Section 175 of the Education Act 2002 (as amended), the Education (Independent School Standards) Regulations 2014, the Non-Maintained Special Schools (England) Regulations 2015 and the Apprenticeships, Skills, Children and Learning Act 2009 (as amended). Schools and colleges in England must have regard to it when carrying out their duties to safeguard and promote the welfare of children. For the purposes of this guidance children includes everyone under the age of 18.</p>
+                    </div>
+
+                    <div id="about" class="info-card">
+                        <h3 class="info-card-title">About this guidance</h3>
+                        <p>We use the terms "must" and "should" throughout the guidance. We use the term "must" when the person in question is legally required to do something, and "should" when the advice set out should be followed unless there is good reason not to. The guidance should be read alongside:</p>
+                        <ul>
+                            <li>statutory guidance Working Together to Safeguard Children, and</li>
+                            <li>departmental advice What to do if you're worried a child is being abused: advice for practitioners</li>
+                        </ul>
+                        
+                        <p>Unless otherwise specified:</p>
+                        <ul>
+                            <li><strong>'school'</strong> means: all schools whether maintained, non-maintained or independent schools (including academies, free schools and alternative provision academies), maintained nursery schools and pupil referral units.</li>
+                            <li><strong>'college'</strong> means further education colleges and sixth-form colleges as established under the Further and Higher Education Act 1992 and institutions designated as being within the further education sector. College also means providers of post-16 Education as set out in the Apprenticeships, Skills, Children and Learning Act 2009 (as amended). 16-19 Academies, Special Post-16 institutions and Independent Training Providers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card warning-card">
+                        <h4 class="info-card-title">Victims and alleged perpetrator(s)</h4>
+                        <p>For the purposes of this guidance, we, in places, use the term 'victim'. It is a widely recognised and understood term. It is important that schools and colleges recognise that not everyone who has been subjected to abuse considers themselves a victim or would want to be described in this way. Ultimately, schools and colleges should be conscious of this when managing any incident and be prepared to use any term with which the child is most comfortable.</p>
+                    </div>
+
+                    <div class="info-card success-card">
+                        <h4 class="info-card-title">Who this guidance is for</h4>
+                        <p>This statutory guidance should be read and followed by:</p>
+                        <ul>
+                            <li>governing bodies of maintained schools (including maintained nursery schools) and colleges</li>
+                            <li>proprietors of independent schools (including academies, free schools and alternative provision academies) and non-maintained special schools</li>
+                            <li>management committees of pupil referral units (PRUs), and</li>
+                            <li>senior leadership teams</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h4 class="info-card-title">School and college staff</h4>
+                        <p>It is essential that everybody working in a school or college understands their safeguarding responsibilities. Governing bodies and proprietors should ensure that those staff who work directly with children read at least Part one of this guidance.</p>
+                        <p>Governing bodies and proprietors, working with their senior leadership teams and especially their designated safeguarding lead, should ensure that those staff who do not work directly with children read either Part one or Annex A (a condensed version of Part one) of this guidance.</p>
+                    </div>
+                </section>
+
+                <!-- Part One Section -->
+                <section id="part-one" class="section">
+                    <h1>Part one: Safeguarding information for all staff</h1>
+                    
+                    <h2>What school and college staff should know and do</h2>
+                    
+                    <h3>A child centred and co-ordinated approach to safeguarding</h3>
+                    
+                    <div class="numbered-para">
+                        <div class="para-number">1</div>
+                        <div class="para-content">
+                            <p>Schools and colleges and their staff are an important part of the wider safeguarding system for children. This system is described in the statutory guidance Working Together to Safeguard Children.</p>
+                        </div>
+                    </div>
+
+                    <div class="numbered-para">
+                        <div class="para-number">2</div>
+                        <div class="para-content">
+                            <p><strong>Safeguarding and promoting the welfare of children is everyone's responsibility.</strong> 'Children' includes everyone under the age of 18. Everyone who comes into contact with children and their families has a role to play. In order to fulfil this responsibility effectively, all practitioners should make sure their approach is child centred. This means that they should consider, at all times, what is in the best interests of the child.</p>
+                        </div>
+                    </div>
+
+                    <div class="numbered-para">
+                        <div class="para-number">3</div>
+                        <div class="para-content">
+                            <p>No single practitioner can have a full picture of a child's needs and circumstances. If children and families are to receive the right help at the right time, everyone who comes into contact with them has a role to play in identifying concerns, sharing information and taking prompt action. Safeguarding and promoting the welfare of children is defined for the purposes of this guidance as:</p>
+                            <ul>
+                                <li>providing help and support to meet the needs of children as soon as problems emerge</li>
+                                <li>protecting children from maltreatment, whether that is within or outside the home, including online</li>
+                                <li>preventing the impairment of children's mental and physical health or development</li>
+                                <li>ensuring that children grow up in circumstances consistent with the provision of safe and effective care</li>
+                                <li>taking action to enable all children to have the best outcomes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>The role of school and college staff</h3>
+                    
+                    <div class="numbered-para">
+                        <div class="para-number">4</div>
+                        <div class="para-content">
+                            <p>School and college staff are particularly important, as they are in a position to identify concerns early, provide help for children, promote children's welfare and prevent concerns from escalating.</p>
+                        </div>
+                    </div>
+
+                    <div class="numbered-para">
+                        <div class="para-number">5</div>
+                        <div class="para-content">
+                            <p>All staff have a responsibility to provide a safe environment in which children can learn.</p>
+                        </div>
+                    </div>
+
+                    <div class="numbered-para">
+                        <div class="para-number">6</div>
+                        <div class="para-content">
+                            <p>All staff should be prepared to identify children who may benefit from early help. Early help means providing support as soon as a problem emerges at any point in a child's life, from the foundation years through to the teenage years.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What Staff Need to Know -->
+                <section id="what-staff-know" class="section">
+                    <h2>What school and college staff need to know</h2>
+                    
+                    <div class="numbered-para">
+                        <div class="para-number">11</div>
+                        <div class="para-content">
+                            <p>All staff should be aware of systems within their school or college which support safeguarding, and these should be explained to them as part of staff induction. This should include the:</p>
+                            <ul>
+                                <li><strong>child protection policy</strong> (which should amongst other things also include the policy and procedures to deal with child-on-child abuse)</li>
+                                <li><strong>behaviour policy</strong> (which should include measures to prevent bullying, including cyberbullying, prejudice-based and discriminatory bullying)</li>
+                                <li><strong>staff behaviour policy</strong> (sometimes called a code of conduct) should amongst other things, include low-level concerns, allegations against staff and whistleblowing</li>
+                                <li><strong>safeguarding response</strong> to children who are absent from education, particularly on repeat occasions and/or prolonged periods</li>
+                                <li><strong>role of the designated safeguarding lead</strong> (including the identity of the designated safeguarding lead and any deputies)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="numbered-para">
+                        <div class="para-number">12</div>
+                        <div class="para-content">
+                            <p>All staff should receive appropriate safeguarding and child protection training (including online safety which, amongst other things, includes an understanding of the expectations, applicable roles and responsibilities in relation to filtering and monitoring) at induction. The training should be regularly updated. In addition, all staff should receive safeguarding and child protection (including online safety) updates, as required, and at least annually, to continue to provide them with relevant skills and knowledge to safeguard children effectively.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Early Help Section -->
+                <section id="early-help" class="section">
+                    <h2 id="what-staff-do">What school and college staff should look out for</h2>
+                    
+                    <h3>Early help</h3>
+                    
+                    <div class="numbered-para">
+                        <div class="para-number">18</div>
+                        <div class="para-content">
+                            <p>Any child may benefit from early help, but all school and college staff should be particularly alert to the potential need for early help for a child who:</p>
+                            <ul>
+                                <li>is disabled or has certain health conditions and has specific additional needs</li>
+                                <li>has special educational needs (whether or not they have a statutory Education, Health and Care plan)</li>
+                                <li>has a mental health need</li>
+                                <li>is a young carer</li>
+                                <li>is showing signs of being drawn in to anti-social or criminal behaviour, including gang involvement and association with organised crime groups or county lines</li>
+                                <li>is frequently missing/goes missing from education, home or care</li>
+                                <li>has experienced multiple suspensions, is at risk of being permanently excluded from schools, colleges and in Alternative Provision or a Pupil Referral Unit</li>
+                                <li>is at risk of modern slavery, trafficking, sexual and/or criminal exploitation</li>
+                                <li>is at risk of being radicalised or exploited</li>
+                                <li>has a parent or carer in custody, or is affected by parental offending</li>
+                                <li>is in a family circumstance presenting challenges for the child, such as drug and alcohol misuse, adult mental health issues and domestic abuse</li>
+                                <li>is misusing alcohol and other drugs themselves</li>
+                                <li>is at risk of so-called 'honour'-based abuse such as Female Genital Mutilation or Forced Marriage</li>
+                                <li>is a privately fostered child</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Abuse and Neglect Section -->
+                <section id="indicators" class="section">
+                    <h3>Abuse, neglect and exploitation</h3>
+                    
+                    <div class="numbered-para">
+                        <div class="para-number">19</div>
+                        <div class="para-content">
+                            <p>All staff should be aware of the indicators of abuse, neglect and exploitation (see below), understanding that children can be at risk of harm inside and outside of the school/college, inside and outside of home, and online. Exercising professional curiosity and knowing what to look for is vital for the early identification of abuse and neglect so that staff are able to identify cases of children who may be in need of help or protection.</p>
+                        </div>
+                    </div>
+
+                    <h4>Indicators of abuse and neglect</h4>
+                    
+                    <div class="info-card definition-card">
+                        <h5 class="info-card-title">Physical abuse</h5>
+                        <p>A form of abuse which may involve hitting, shaking, throwing, poisoning, burning or scalding, drowning, suffocating or otherwise causing physical harm to a child. Physical harm may also be caused when a parent or carer fabricates the symptoms of, or deliberately induces, illness in a child.</p>
+                    </div>
+
+                    <div class="info-card definition-card">
+                        <h5 class="info-card-title">Emotional abuse</h5>
+                        <p>The persistent emotional maltreatment of a child such as to cause severe and adverse effects on the child's emotional development. It may involve conveying to a child that they are worthless or unloved, inadequate, or valued only insofar as they meet the needs of another person.</p>
+                    </div>
+
+                    <div class="info-card definition-card">
+                        <h5 class="info-card-
