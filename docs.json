@@ -44,7 +44,19 @@
           {
             "group": "Essex",
             "pages": ["Essex-1", "Essex-2", "Essex-3"]
-          }
+          },
+          {
+            "group": "Suffolk",
+            "pages": ["Suffolk-1", "Suffolk-2", "Suffolk-3"]
+          },
+          {
+            "group": "Staffordshire",
+            "pages": ["Staffs-1", "Staffs-2", "Staffs-3"]
+          },
+                    {
+            "group": "Hertfordshire",
+            "pages": ["Herts-1", "Herts-2", "Herts-3"]
+          }     
         ]
       }
     ]
