@@ -14,17 +14,27 @@
           },
           {
             "group": "Your first role",
-            "pages": ["essentialonlinetools", "location-f2f-online", "AP-working-with-the-learner", "RA-first-session", "pay", "sessions-and-resources", "reports-and-pay"]
+            "pages": [
+              "essentialonlinetools",
+              "location-f2f-online",
+              "AP-working-with-the-learner",
+              "RA-first-session",
+              "pay",
+              "sessions-and-resources",
+              "reports-and-pay"
+            ]
           },
           {
             "group": "Teachers' Standards",
             "pages": ["DfE-Standards", "Confidentiality"]
           },
-           {
+          {
             "group": "Safeguarding",
             "pages": ["safeguarding", "KCSIE-2025"]
           }
         ]
+      },
+      {
         "tab": "Area Requirements",
         "groups": [
           {
@@ -35,6 +45,7 @@
             "group": "Suffolk",
             "pages": ["index", "meet-the-team", "staff-contacts"]
           }
+        ]
       }
     ]
   }
