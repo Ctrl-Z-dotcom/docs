@@ -38,11 +38,11 @@
         "tab": "Area Requirements",
         "groups": [
           {
-            "group": "Essex",
-            "pages": ["index", "meet-the-team", "staff-contacts"]
+            "group": "Local Requirements",
+            "pages": ["index-2"]
           },
           {
-            "group": "Suffolk",
+            "group": "Essex",
             "pages": ["index", "meet-the-team", "staff-contacts"]
           }
         ]
