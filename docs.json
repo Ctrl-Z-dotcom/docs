@@ -31,6 +31,10 @@
           {
             "group": "Safeguarding",
             "pages": ["safeguarding", "sg-requirements"]
+          },
+          {
+            "group": "FAQ",
+            "pages": ["FAQ1"]
           }
         ]
       },
