@@ -22,9 +22,18 @@
           },
            {
             "group": "Safeguarding",
-            "pages": ["Safeguarding", "KCSIE-2025"]
+            "pages": ["safeguarding", "KCSIE-2025"]
           }
         ]
+        "tab": "Area Requirements",
+        "groups": [
+          {
+            "group": "Essex",
+            "pages": ["index", "meet-the-team", "staff-contacts"]
+          },
+            "group": "Suffolk",
+            "pages": ["index", "meet-the-team", "staff-contacts"]
+          },
       }
     ]
   }
